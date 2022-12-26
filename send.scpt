@@ -1,6 +1,9 @@
+-- This grabs the contacts path set from the makefiles
+set envVarName to "CONTACTS_PATH"
+set envVarValue to do shell script "echo $" & envVarName
+set filePath to envVarValue
 
-
-set filePath to "Users:stefansohlstrom:Projects:imessageSender:contacts.txt"
+-- set filePath to "Users:stefansohlstrom:Projects:imessageSender:contacts.txt"
 splitFileAndSendMessage(filePath)
 
 -- *** Utils ***
@@ -11,10 +14,8 @@ splitFileAndSendMessage(filePath)
 on splitFileAndSendMessage(theFile)
 -- first, read the file
     set theFile to readFile(theFile)
--- next, split the file into lines
+-- next, split the file into paragraphs, which is an array of lines in the string 
     set theFile to paragraphs of theFile
--- next, for every paragraph, get the phone number and name
-    set paragraphsArray to paragraphs of theFile
     -- now, a for loop that loops through paragraphsArray and logs the phone number and name
     repeat with theLine in theFile
         set lineArray to my theSplit(theLine, ",")
