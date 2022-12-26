@@ -1,3 +1,2 @@
-- Add phone numbers, names in contacts.txt
-- Change `filePath`
-- osascript send.scpt
+- Add phone numbers, names in `contacts.txt`
+- Hit `make`
