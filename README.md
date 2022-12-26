@@ -1,0 +1,3 @@
+- Add phone numbers, names in contacts.txt
+- Change `filePath`
+- osascript send.scpt
